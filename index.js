@@ -9,13 +9,13 @@ function irParaLogin() {
   );
 
   if (resposta) {
-    window.location.href = "../Login/login.html";
+    window.location.href = "./Login/login.html";
   }
 }
 
-btnAnimais.addEventListener("click", irParaLogin);
-btnDenuncia.addEventListener("click", irParaLogin);
-btnMenuDenuncia.addEventListener("click", irParaLogin);
+if (btnAnimais) btnAnimais.addEventListener("click", irParaLogin);
+if (btnDenuncia) btnDenuncia.addEventListener("click", irParaLogin);
+if (btnMenuDenuncia) btnMenuDenuncia.addEventListener("click", irParaLogin);
 
 linksCards.forEach(function(link) {
   link.addEventListener("click", function(e) {
