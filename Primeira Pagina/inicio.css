@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #faf9f5;
+  color: #000;
+  min-height: 100vh;
+}
+
+header {
+  height: 72px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.logo span {
+  background: #f5862d;
+  color: white;
+  border: 1px solid #111;
+  border-radius: 50%;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a,
+.menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav a:hover,
+.menu a:hover {
+  color: #f5862d;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.menu button {
+  background: #f5862d;
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+}
+
+.hero-text h1 {
+  font-size: 68px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  color: #8b8b8b;
+  font-size: 17px;
+  margin-bottom: 24px;
+  max-width: 550px;
+}
+
+.botoes {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.botoes button {
+  width: 220px;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-laranja {
+  background: #f5862d;
+  color: white;
+  border: none;
+}
+
+.btn-laranja:hover {
+  background: #d96f19;
+}
+
+.btn-branco {
+  background: white;
+  color: #f5862d;
+  border: 1px solid #f5862d;
+}
+
+.btn-branco:hover {
+  background: #f5862d;
+  color: white;
+}
+
+.numeros {
+  display: flex;
+  gap: 100px;
+}
+
+.numeros h3 {
+  color: #f5862d;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.numeros span {
+  font-size: 13px;
+  font-weight: bold;
+  color: #777;
+}
+
+.hero-card {
+  width: 570px;
+  height: 220px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 28px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card h2 {
+  font-size: 48px;
+  text-align: center;
+  font-weight: 900;
+  line-height: 48px;
+}
+
+.ajuda {
+  background: #fff;
+  padding: 70px 60px;
+  text-align: center;
+}
+
+.ajuda h2 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.ajuda > p {
+  color: #999;
+  margin: 15px 0 40px;
+  font-size: 17px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 31.5%;
+  background: #fffdf0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px 35px;
+  text-align: left;
+  min-height: 190px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.card h3 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #8f8f8f;
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card a {
+  text-decoration: none;
+  color: #f5862d;
+  font-weight: 900;
+  font-size: 15px;
+}

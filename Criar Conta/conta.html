@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta - Projeto Arca</title>
+  <link rel="stylesheet" href="conta.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="logo">
+    <div class="icone">🐾</div>
+    <h1>Projeto Arca</h1>
+  </div>
+
+  <h2>Criar uma conta</h2>
+  <p class="subtitulo">Junte-se à comunidade Projeto Arca</p>
+
+  <form id="cadastroForm">
+
+    <label>Você é:</label>
+
+    <div class="tipo-usuario">
+      <button type="button" class="tipo ativo" id="adotante">
+        Adotante
+      </button>
+
+      <button type="button" class="tipo" id="resgatista">
+        Resgatista
+      </button>
+    </div>
+
+    <label>Nome Completo</label>
+    <input type="text" id="nome" placeholder="João da Silva" required>
+
+    <label>E-mail</label>
+    <input type="email" id="email" placeholder="seu@email.com" required>
+
+    <label>Senha</label>
+    <input type="password" id="senha" placeholder="Mínimo 8 caracteres" minlength="8" required>
+
+    <label>Confirmar Senha</label>
+    <input type="password" id="confirmarSenha" placeholder="Confirme a senha" minlength="8" required>
+
+    <button type="submit" class="btn-criar">
+      Criar Conta
+    </button>
+
+    <span>ou</span>
+
+    <button type="button" class="btn-login" onclick="voltarLogin()">
+      Já tenho uma conta
+    </button>
+
+  </form>
+
+</div>
+
+<script src="conta.js"></script>
+
+</body>
+</html>

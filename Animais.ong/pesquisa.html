@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciar Animais</title>
+  <link rel="stylesheet" href="pesquisa.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>A</span> Projeto Arca</div>
+
+  <nav>
+    <a href="../Principal ONG/ong.html">Início</a>
+    <a href="pesquisa.html">Animais</a>
+    <a href="../Denuncia ONG/denunciaRecebida.html">Denúncias</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="../ONG/ong.html">Perfil</a>
+  </nav>
+
+  <div class="sino">🔔</div>
+</header>
+
+<main>
+  <section class="topo-pagina">
+    <h1>Gerenciar Animais</h1>
+
+    <div class="pesquisa">
+      <span>🔍</span>
+      <input type="text" id="buscar" placeholder="Pesquisar animal...">
+    </div>
+
+    <div class="filtros">
+      <button type="button" data-filtro="todos">Todos</button>
+      <button type="button" data-filtro="cachorro">Cachorros</button>
+      <button type="button" data-filtro="gato">Gatos</button>
+      <button type="button" data-filtro="pequena">Pequeno</button>
+    </div>
+  </section>
+
+  <section class="grid" id="listaAnimais"></section>
+</main>
+
+<footer>
+  <div>
+    <h3>Projeto Arca</h3>
+    <p>Proteção, denúncia e adoção de animais em Serra, ES.</p>
+  </div>
+
+  <div>
+    <h3>Navegação</h3>
+    <p>Início</p>
+    <p>Animais</p>
+  </div>
+
+  <div>
+    <h3>Ações</h3>
+    <p>Fazer Denúncia</p>
+    <p>Ser Voluntário</p>
+  </div>
+
+  <div>
+    <h3>Contato</h3>
+    <p>Email: contato@arcadacidade.com.br</p>
+    <p>Tel: (27) 9 9999-9999</p>
+  </div>
+</footer>
+
+<script src="pesquisa.js"></script>
+</body>
+</html>

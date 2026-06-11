@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Voluntário</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>A</span> Projeto Arca</div>
+
+  <nav>
+    <a href="../Principal ONG/ong.html">Início</a>
+    <a href="../Animais.ong/pesquisa.html">Animais</a>
+    <a href="../Denuncia ONG/denunciaRecebida.html">Denúncias</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="#">Perfil</a>
+  </nav>
+
+  <div class="sino">🔔</div>
+</header>
+
+<main>
+  <section class="card">
+    <h1>Cadastrar Voluntário</h1>
+    <p>Preencha os dados para cadastrar um novo voluntário</p>
+
+    <form id="formVoluntario">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Ex: Ana Silva" required>
+
+      <label for="funcao">Função</label>
+      <select id="funcao" required>
+        <option value="">Selecione</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Resgate">Resgate</option>
+        <option value="Cuidador(a)">Cuidador(a)</option>
+        <option value="Veterinário(a)">Veterinário(a)</option>
+      </select>
+
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" placeholder="Ex: Serra - ES" required>
+
+      <label for="status">Status</label>
+      <select id="status" required>
+        <option value="Disponível">Disponível</option>
+        <option value="Indisponível">Indisponível</option>
+      </select>
+
+      <label for="foto">Foto URL</label>
+      <input type="text" id="foto" placeholder="Cole o link da foto">
+
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Cadastrar</button>
+        <button type="button" class="btn-voltar" onclick="voltar()">Voltar</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <h3>Projeto Arca</h3>
+    <p>Proteção, denúncia e adoção de animais em Serra, ES.</p>
+  </div>
+
+  <div>
+    <h3>Navegação</h3>
+    <p>Início</p>
+    <p>Animais</p>
+  </div>
+
+  <div>
+    <h3>Ações</h3>
+    <p>Fazer Denúncia</p>
+    <p>Ser Voluntário</p>
+  </div>
+
+  <div>
+    <h3>Contato</h3>
+    <p>Email: contato@arcadacidade.com.br</p>
+    <p>Tel: (27) 9 9999-9999</p>
+  </div>
+</footer>
+
+<script src="cadastro.js"></script>
+</body>
+</html>

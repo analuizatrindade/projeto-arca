@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animais</title>
+  <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span>A</span>
+    Projeto Arca
+  </div>
+
+  <nav>
+    <a href="../Pagina Tutor/tutor.html">Início</a>
+    <a href="../Catalogo Animais/catalogo.html">Animais</a>
+    <a href="../Denuncia/denuncia.html">Denunciar</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="#">Perfil</a>
+  </nav>
+</header>
+
+<section class="titulo">
+  <h1>Encontre seu novo pet</h1>
+  <p>Dezenas de animais esperando por um lar cheio de amor e cuidado</p>
+</section>
+
+<main>
+  <aside class="filtros">
+    <h2>Filtros</h2>
+
+    <h3>Espécie</h3>
+    <p class="filtro ativo" data-tipo="tipo" data-filtro="todos">Todos</p>
+    <p class="filtro" data-tipo="tipo" data-filtro="Cachorro">Cachorros</p>
+    <p class="filtro" data-tipo="tipo" data-filtro="Gato">Gatos</p>
+
+    <h3>Porte</h3>
+    <p class="filtro ativo" data-tipo="porte" data-filtro="todos">Todos</p>
+    <p class="filtro" data-tipo="porte" data-filtro="Pequeno">Pequeno</p>
+    <p class="filtro" data-tipo="porte" data-filtro="Pequena">Pequena</p>
+    <p class="filtro" data-tipo="porte" data-filtro="Médio">Médio</p>
+    <p class="filtro" data-tipo="porte" data-filtro="Grande">Grande</p>
+  </aside>
+
+  <section class="area-animais">
+    <h2>Disponíveis para Adoção</h2>
+    <div class="grid" id="listaAnimais"></div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <h3>Projeto Arca</h3>
+    <p>Proteção, denúncia e adoção de animais em Serra, ES.</p>
+  </div>
+
+  <div>
+    <h3>Navegação</h3>
+    <p>Início</p>
+    <p>Animais</p>
+  </div>
+
+  <div>
+    <h3>Ações</h3>
+    <p>Fazer Denúncia</p>
+    <p>Ser Voluntário</p>
+  </div>
+
+  <div>
+    <h3>Contato</h3>
+    <p>Email: contato@arcadacidade.com.br</p>
+    <p>Tel: (27) 9 9999-9999</p>
+  </div>
+</footer>
+
+<script src="catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Animal</title>
+  <link rel="stylesheet" href="detalhes.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>A</span> Projeto Arca</div>
+
+  <nav>
+    <a href="../Pagina Tutor/tutor.html">Início</a>
+    <a href="../Catalogo Animais/catalogo.html">Animais</a>
+    <a href="../Denuncia/denuncia.html">Denunciar</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="#">Perfil</a>
+  </nav>
+</header>
+
+<div class="voltar" onclick="voltar()">← Voltar</div>
+
+<main>
+  <section class="galeria">
+    <div class="imagem-principal">
+      <img id="imagemAnimal" src="" alt="Animal">
+      <button type="button" class="favorito">♡</button>
+    </div>
+
+    <div class="miniaturas">
+      <div><img id="mini1" src="" alt="Miniatura 1"></div>
+      <div><img id="mini2" src="" alt="Miniatura 2"></div>
+      <div><img id="mini3" src="" alt="Miniatura 3"></div>
+    </div>
+  </section>
+
+  <section class="detalhes">
+    <span class="status" id="statusAnimal">Para Adoção</span>
+
+    <h1 id="nomeAnimal"></h1>
+    <h3 id="sexoAnimal"></h3>
+    <h4 id="cidadeAnimal"></h4>
+
+    <div class="box">
+      <h2>Sobre</h2>
+      <p id="descricaoAnimal"></p>
+    </div>
+
+    <div class="box">
+      <h2>Características</h2>
+
+      <div class="caracteristicas">
+        <div><small>CASTRADA</small><strong>Sim</strong></div>
+        <div><small>VACINADA</small><strong>Em dia</strong></div>
+        <div><small>MICROCHIP</small><strong>Não</strong></div>
+        <div><small>SOCIÁVEL</small><strong>Sim</strong></div>
+      </div>
+    </div>
+
+    <div class="agenda">
+      <h2>Agendar Visita</h2>
+      <p>Escolha uma data e horário para conhecer</p>
+
+      <div class="horarios">
+        <div>
+          <h3>26/05 (Seg)</h3>
+          <button type="button">09:00</button>
+          <button type="button">14:00</button>
+          <button type="button">16:00</button>
+        </div>
+
+        <div>
+          <h3>27/05 (Ter)</h3>
+          <button type="button">10:00</button>
+          <button type="button">15:00</button>
+        </div>
+
+        <div>
+          <h3>28/05 (Qua)</h3>
+          <button type="button">09:00</button>
+          <button type="button">11:00</button>
+          <button type="button">14:00</button>
+          <button type="button">17:00</button>
+        </div>
+      </div>
+
+      <button type="button" class="btn-agendar">Agendar visita</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div><h3>Projeto Arca</h3><p>Proteção, denúncia e adoção de animais em Serra, ES.</p></div>
+  <div><h3>Navegação</h3><p>Início</p><p>Animais</p></div>
+  <div><h3>Ações</h3><p>Fazer Denúncia</p><p>Ser Voluntário</p></div>
+  <div><h3>Contato</h3><p>Email: contato@arcadacidade.com.br</p><p>Tel: (27) 9 9999-9999</p></div>
+</footer>
+
+<script src="detalhes.js"></script>
+</body>
+</html>

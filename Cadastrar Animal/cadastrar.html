@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Animal</title>
+  <link rel="stylesheet" href="cadastrar.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>A</span> Projeto Arca</div>
+
+  <nav>
+    <a href="../Principal ONG/ong.html">Início</a>
+    <a href="../Animais.ong/pesquisa.html">Animais</a>
+    <a href="../Denuncia ONG/denunciaRecebida.html">Denúncias</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="../Perfil Tutor/perfil.html">Perfil</a>
+  </nav>
+
+  <div class="sino">🔔</div>
+</header>
+
+<main>
+  <section class="conteudo">
+    <div class="lado-esquerdo">
+      <h1>Novo Animal</h1>
+      <p>Preencha as informações do novo animal</p>
+
+      <label for="imagemAnimal" class="upload" id="uploadBox">
+        <div class="upload-icon">⇩</div>
+        <h3>Clique para enviar<br>ou arraste a imagem</h3>
+        <h4>PNG, JPG até 5MB</h4>
+      </label>
+
+      <input type="file" id="imagemAnimal" accept="image/png, image/jpeg">
+
+      <button type="button" class="btn-cadastrar" id="btnCadastrar">
+        🐾 Cadastrar animal
+      </button>
+    </div>
+
+    <form class="formulario">
+      <label for="nome">Animal</label>
+      <input type="text" id="nome" placeholder="Ex: Bolinha">
+
+      <label for="tipo">Tipo</label>
+      <select id="tipo">
+        <option value="">Selecione o tipo</option>
+        <option value="Cachorro">Cachorro</option>
+        <option value="Gato">Gato</option>
+      </select>
+
+      <label for="porte">Porte</label>
+      <select id="porte">
+        <option value="">Selecione o porte</option>
+        <option value="Pequena">Pequeno</option>
+        <option value="Médio">Médio</option>
+        <option value="Grande">Grande</option>
+      </select>
+
+      <label for="sexo">Sexo</label>
+      <select id="sexo">
+        <option value="">Selecione o sexo</option>
+        <option value="Fêmea">Fêmea</option>
+        <option value="Macho">Macho</option>
+        <option value="Não informado">Não informado</option>
+      </select>
+
+      <label for="idade">Idade</label>
+      <input type="text" id="idade" placeholder="Ex: 2 anos">
+
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" maxlength="300" placeholder="Conte um pouco sobre o animal..."></textarea>
+
+      <div class="contador"><span id="contador">0</span>/300</div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <h3>Projeto Arca</h3>
+    <p>Proteção, denúncia e adoção de animais em Serra, ES.</p>
+  </div>
+
+  <div>
+    <h3>Navegação</h3>
+    <p>Início</p>
+    <p>Animais</p>
+  </div>
+
+  <div>
+    <h3>Ações</h3>
+    <p>Fazer Denúncia</p>
+    <p>Ser Voluntário</p>
+  </div>
+
+  <div>
+    <h3>Contato</h3>
+    <p>Email: contato@arcadacidade.com.br</p>
+    <p>Tel: (27) 9 9999-9999</p>
+  </div>
+</footer>
+
+<script src="cadastrar.js"></script>
+</body>
+</html>

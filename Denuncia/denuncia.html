@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denunciar - Projeto Arca</title>
+  <link rel="stylesheet" href="denuncia.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>A</span> Projeto Arca</div>
+
+  <nav>
+    <a href="../Pagina Tutor/tutor.html">Início</a>
+    <a href="../Catalogo Animais/catalogo.html">Animais</a>
+    <a href="../Denuncia/denuncia.html">Denunciar</a>
+    <a href="../voluntario tutor/voluntario.html">Voluntários</a>
+    <a href="#">Perfil</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Denuncie com Segurança</h1>
+  <p>Reporte maus-tratos, abandono ou qualquer animal em risco. Sua identidade é protegida.</p>
+</section>
+
+<div class="alerta">
+  <strong>Denúncia 100% Anônima</strong>
+  <p>Seus dados não são registrados. Você pode denunciar com total segurança e confidencialidade.</p>
+</div>
+
+<main>
+  <section class="formulario">
+    <form id="formDenuncia">
+
+      <label>Tipo de Ocorrência *</label>
+      <div class="opcoes">
+        <button type="button">Maus-tratos</button>
+        <button type="button">Abandono</button>
+        <button type="button">Atropelamento</button>
+        <button type="button">Animal Preso</button>
+      </div>
+
+      <label for="endereco">Endereço / Localização *</label>
+      <div class="localizacao">
+        <input type="text" id="endereco" placeholder="Rua, número, bairro..." required>
+        <span>⌖</span>
+      </div>
+
+      <label for="descricao">Descrição *</label>
+      <textarea id="descricao" placeholder="Descreva a situação do animal..." required></textarea>
+
+      <label for="foto">Foto Opcional</label>
+      <div class="upload">
+        <div class="seta">↑</div>
+        <strong>Clique para enviar uma foto</strong>
+        <p>JPG, PNG até 5MB</p>
+        <input type="file" id="foto" accept="image/*">
+      </div>
+
+      <button class="btn-enviar" type="submit">Enviar Denúncia Agora</button>
+    </form>
+  </section>
+
+  <aside>
+    <div class="card">
+      <h2>Como Funciona?</h2>
+
+      <div class="passo">
+        <span>1</span>
+        <p><strong>Preencha o Formulário</strong><br>Nos diga o que está acontecendo</p>
+      </div>
+
+      <div class="passo">
+        <span>2</span>
+        <p><strong>Identidade Protegida</strong><br>Seus dados não são registrados</p>
+      </div>
+
+      <div class="passo">
+        <span>3</span>
+        <p><strong>Equipe Recebe Alerta</strong><br>Processamos sua denúncia</p>
+      </div>
+
+      <div class="passo">
+        <span>4</span>
+        <p><strong>Resgate é Acionado</strong><br>Nossa equipe age rapidamente</p>
+      </div>
+    </div>
+
+    <h2 class="titulo-impacto">Impacto da Comunidade</h2>
+
+    <div class="card impacto">
+      <h3>247</h3>
+      <p>Denúncias recebidas/mês</p>
+
+      <h3>89%</h3>
+      <p>Taxa de atendimento</p>
+
+      <h3>312</h3>
+      <p>Animais resgatados</p>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div>
+    <h3>Projeto Arca</h3>
+    <p>Proteção, denúncia e adoção de animais em Serra, ES.</p>
+  </div>
+
+  <div>
+    <h3>Navegação</h3>
+    <p>Início</p>
+    <p>Animais</p>
+  </div>
+
+  <div>
+    <h3>Ações</h3>
+    <p>Fazer Denúncia</p>
+    <p>Ser Voluntário</p>
+  </div>
+
+  <div>
+    <h3>Contato</h3>
+    <p>Email: contato@arcadacidade.com.br</p>
+    <p>Tel: (27) 9 9999-9999</p>
+  </div>
+</footer>
+
+<script src="denuncia.js"></script>
+</body>
+</html>

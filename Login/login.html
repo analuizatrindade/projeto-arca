@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Arca</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<main class="login-page">
+  <section class="login-card">
+
+    <div class="logo">
+      <div class="logo-icon">🐾</div>
+      <h1>Projeto Arca</h1>
+    </div>
+
+    <h2>Entrar na sua conta</h2>
+    <p>Bem-vindo de volta ao Projeto Arca</p>
+
+    <form id="loginForm">
+      <label for="usuario">Usuário ou e-mail</label>
+      <input type="text" id="usuario" placeholder="Ex: tutor ou ong" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="********" required>
+
+      <a href="#" class="esqueci">Esqueci minha senha</a>
+
+      <button type="submit" class="btn-entrar">Entrar</button>
+
+      <span>ou</span>
+
+      <button type="button" class="btn-criar" onclick="criarConta()">Criar nova conta</button>
+    </form>
+
+  </section>
+</main>
+
+<script src="login.js"></script>
+</body>
+</html>
