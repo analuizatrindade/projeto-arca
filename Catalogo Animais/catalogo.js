@@ -68,6 +68,7 @@ function mostrarAnimais(animais) {
 
           <div class="botoes-card">
             <button type="button" class="btn-detalhes">Ver Detalhes</button>
+            <button type="button" class="btn-editar">Editar</button>
             <button type="button" class="btn-excluir">Excluir</button>
             <button type="button" class="btn-coracao">♡</button>
           </div>
@@ -88,6 +89,32 @@ function aplicarFiltros() {
   });
 
   mostrarAnimais(filtrados);
+}
+
+function editarAnimal(id) {
+  let animaisSalvos = JSON.parse(localStorage.getItem("animais")) || [];
+
+  let animal = animaisSalvos.find((animal) => animal.id == id);
+
+  if (!animal) {
+    alert("Esse animal padrão não pode ser editado.");
+    return;
+  }
+
+  animal.nome = prompt("Novo nome:", animal.nome) || animal.nome;
+  animal.tipo = prompt("Novo tipo:", animal.tipo) || animal.tipo;
+  animal.porte = prompt("Novo porte:", animal.porte) || animal.porte;
+  animal.idade = prompt("Nova idade:", animal.idade) || animal.idade;
+  animal.sexo = prompt("Novo sexo:", animal.sexo) || animal.sexo;
+  animal.status = prompt("Novo status:", animal.status) || animal.status;
+  animal.cidade = prompt("Nova cidade:", animal.cidade) || animal.cidade;
+  animal.descricao = prompt("Nova descrição:", animal.descricao) || animal.descricao;
+  animal.imagem = prompt("Nova imagem URL:", animal.imagem) || animal.imagem;
+
+  localStorage.setItem("animais", JSON.stringify(animaisSalvos));
+
+  alert("Animal atualizado com sucesso!");
+  aplicarFiltros();
 }
 
 function excluirAnimal(id) {
@@ -144,6 +171,12 @@ document.addEventListener("click", function (e) {
     return;
   }
 
+  if (e.target.classList.contains("btn-editar")) {
+    e.stopPropagation();
+    editarAnimal(id);
+    return;
+  }
+
   if (e.target.classList.contains("btn-excluir")) {
     e.stopPropagation();
     excluirAnimal(id);
@@ -157,4 +190,4 @@ document.addEventListener("click", function (e) {
   }
 });
 
-aplicarFiltros(); 
+aplicarFiltros();

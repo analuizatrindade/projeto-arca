@@ -25,16 +25,23 @@ const voluntariosPadrao = [
   }
 ];
 
-const voluntariosSalvos = JSON.parse(localStorage.getItem("voluntarios")) || [];
-const voluntarios = [...voluntariosPadrao, ...voluntariosSalvos];
-
 const lista = document.getElementById("listaVoluntarios");
 
+function buscarVoluntarios() {
+  const voluntariosSalvos =
+    JSON.parse(localStorage.getItem("voluntarios")) || [];
+
+  return [...voluntariosPadrao, ...voluntariosSalvos];
+}
+
 function carregarVoluntarios() {
+  const voluntarios = buscarVoluntarios();
+
   lista.innerHTML = "";
 
-  voluntarios.forEach(function(voluntario) {
-    const classeStatus = voluntario.status === "Disponível" ? "disponivel" : "indisponivel";
+  voluntarios.forEach(function(voluntario, index) {
+    const classeStatus =
+      voluntario.status === "Disponível" ? "disponivel" : "indisponivel";
 
     lista.innerHTML += `
       <div class="voluntario-card">
@@ -49,10 +56,75 @@ function carregarVoluntarios() {
           ${voluntario.status}
         </span>
 
-        <button class="btn-chamar" type="button">Chamar</button>
+        <div class="acoes">
+          <button class="btn-editar" onclick="editarVoluntario(${index})">
+            Editar
+          </button>
+
+          <button class="btn-excluir" onclick="excluirVoluntario(${index})">
+            Excluir
+          </button>
+
+          <button class="btn-chamar" type="button">
+            Chamar
+          </button>
+        </div>
       </div>
     `;
   });
+}
+
+function editarVoluntario(index) {
+  if (index < voluntariosPadrao.length) {
+    alert("Voluntários padrão não podem ser editados.");
+    return;
+  }
+
+  let voluntariosSalvos =
+    JSON.parse(localStorage.getItem("voluntarios")) || [];
+
+  let indiceReal = index - voluntariosPadrao.length;
+  let voluntario = voluntariosSalvos[indiceReal];
+
+  voluntario.nome =
+    prompt("Nome:", voluntario.nome) || voluntario.nome;
+
+  voluntario.funcao =
+    prompt("Função e cidade:", voluntario.funcao) || voluntario.funcao;
+
+  voluntario.status =
+    prompt("Status: Disponível ou Indisponível", voluntario.status) || voluntario.status;
+
+  voluntario.foto =
+    prompt("URL da foto:", voluntario.foto) || voluntario.foto;
+
+  localStorage.setItem("voluntarios", JSON.stringify(voluntariosSalvos));
+
+  alert("Voluntário atualizado com sucesso!");
+  carregarVoluntarios();
+}
+
+function excluirVoluntario(index) {
+  if (index < voluntariosPadrao.length) {
+    alert("Voluntários padrão não podem ser excluídos.");
+    return;
+  }
+
+  if (!confirm("Deseja excluir este voluntário?")) {
+    return;
+  }
+
+  let voluntariosSalvos =
+    JSON.parse(localStorage.getItem("voluntarios")) || [];
+
+  let indiceReal = index - voluntariosPadrao.length;
+
+  voluntariosSalvos.splice(indiceReal, 1);
+
+  localStorage.setItem("voluntarios", JSON.stringify(voluntariosSalvos));
+
+  alert("Voluntário excluído com sucesso!");
+  carregarVoluntarios();
 }
 
 function irCadastro() {

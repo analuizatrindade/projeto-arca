@@ -6,17 +6,14 @@ function buscarDenuncias() {
 }
 
 function mostrarDenuncias(denuncias) {
-
   lista.innerHTML = "";
 
   if (denuncias.length === 0) {
-    lista.innerHTML =
-      "<p>Nenhuma denúncia encontrada.</p>";
+    lista.innerHTML = "<p>Nenhuma denúncia encontrada.</p>";
     return;
   }
 
   denuncias.forEach(function(denuncia) {
-
     lista.innerHTML += `
       <div class="denuncia">
 
@@ -33,7 +30,7 @@ function mostrarDenuncias(denuncias) {
 
             <p>
               <strong>Data:</strong>
-              ${denuncia.data}
+              ${denuncia.data || "Não informada"}
             </p>
           </div>
         </div>
@@ -46,38 +43,31 @@ function mostrarDenuncias(denuncias) {
 
           <h3>Status</h3>
 
-          <select
-            onchange="alterarStatus(${denuncia.id}, this.value)"
-          >
-
-            <option value="Pendente"
-            ${denuncia.status === "Pendente" ? "selected" : ""}>
+          <select onchange="alterarStatus(${denuncia.id}, this.value)">
+            <option value="Pendente" ${denuncia.status === "Pendente" ? "selected" : ""}>
               Pendente
             </option>
 
-            <option value="Em análise"
-            ${denuncia.status === "Em análise" ? "selected" : ""}>
+            <option value="Em análise" ${denuncia.status === "Em análise" ? "selected" : ""}>
               Em análise
             </option>
 
-            <option value="Equipe enviada"
-            ${denuncia.status === "Equipe enviada" ? "selected" : ""}>
+            <option value="Equipe enviada" ${denuncia.status === "Equipe enviada" ? "selected" : ""}>
               Equipe enviada
             </option>
 
-            <option value="Resolvido"
-            ${denuncia.status === "Resolvido" ? "selected" : ""}>
+            <option value="Resolvido" ${denuncia.status === "Resolvido" ? "selected" : ""}>
               Resolvido
             </option>
-
           </select>
 
           <br><br>
 
-          <button
-            onclick="excluirDenuncia(${denuncia.id})"
-            class="btn-excluir"
-          >
+          <button onclick="editarDenuncia(${denuncia.id})" class="btn-editar">
+            Editar
+          </button>
+
+          <button onclick="excluirDenuncia(${denuncia.id})" class="btn-excluir">
             Excluir
           </button>
 
@@ -89,27 +79,50 @@ function mostrarDenuncias(denuncias) {
 }
 
 function alterarStatus(id, novoStatus) {
-
   let denuncias = buscarDenuncias();
 
   denuncias.forEach(function(denuncia) {
-
     if (denuncia.id == id) {
       denuncia.status = novoStatus;
     }
-
   });
 
-  localStorage.setItem(
-    "denuncias",
-    JSON.stringify(denuncias)
-  );
+  localStorage.setItem("denuncias", JSON.stringify(denuncias));
+
+  mostrarDenuncias(denuncias);
+}
+
+function editarDenuncia(id) {
+  let denuncias = buscarDenuncias();
+
+  let denuncia = denuncias.find(function(item) {
+    return item.id == id;
+  });
+
+  if (!denuncia) {
+    alert("Denúncia não encontrada!");
+    return;
+  }
+
+  denuncia.tipo = prompt("Tipo da denúncia:", denuncia.tipo) || denuncia.tipo;
+
+  denuncia.endereco =
+    prompt("Endereço:", denuncia.endereco) || denuncia.endereco;
+
+  denuncia.descricao =
+    prompt("Descrição:", denuncia.descricao) || denuncia.descricao;
+
+  denuncia.data =
+    prompt("Data:", denuncia.data || "Não informada") || denuncia.data;
+
+  localStorage.setItem("denuncias", JSON.stringify(denuncias));
+
+  alert("Denúncia atualizada com sucesso!");
 
   mostrarDenuncias(denuncias);
 }
 
 function excluirDenuncia(id) {
-
   if (!confirm("Excluir denúncia?")) {
     return;
   }
@@ -120,10 +133,7 @@ function excluirDenuncia(id) {
     return denuncia.id != id;
   });
 
-  localStorage.setItem(
-    "denuncias",
-    JSON.stringify(denuncias)
-  );
+  localStorage.setItem("denuncias", JSON.stringify(denuncias));
 
   mostrarDenuncias(denuncias);
 }

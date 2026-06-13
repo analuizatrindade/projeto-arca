@@ -5,10 +5,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: #faf9f6;
   color: #111;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -68,6 +74,7 @@ nav a:hover {
 main {
   width: 900px;
   margin: 45px auto;
+  flex: 1;
 }
 
 h1 {
@@ -135,21 +142,53 @@ h1 {
   background: #ef6f6c;
 }
 
-.btn-chamar {
+.acoes {
   margin-left: auto;
-  width: 100px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-chamar,
+.btn-editar,
+.btn-excluir {
+  width: 90px;
   height: 38px;
-  background: white;
-  border: 1px solid #f5862d;
-  color: #f5862d;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 900;
   cursor: pointer;
 }
 
+.btn-chamar {
+  background: white;
+  border: 1px solid #f5862d;
+  color: #f5862d;
+}
+
 .btn-chamar:hover {
   background: #f5862d;
+  color: white;
+}
+
+.btn-editar {
+  background: #fff0df;
+  border: 1px solid #f5862d;
+  color: #f5862d;
+}
+
+.btn-editar:hover {
+  background: #f5862d;
+  color: white;
+}
+
+.btn-excluir {
+  background: #ffe0e0;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+}
+
+.btn-excluir:hover {
+  background: #ff4d4d;
   color: white;
 }
 
@@ -172,23 +211,53 @@ h1 {
   color: white;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
 footer {
-    background: #1c1c1c;
-    color: white;
-    padding: 40px;
+  background: #1c1c1c;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .voluntario-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info,
+  .status {
+    width: 100%;
+  }
+
+  .acoes {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .btn-publicar {
+    width: 100%;
+  }
 }

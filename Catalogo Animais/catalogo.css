@@ -194,6 +194,7 @@ main {
   display: flex;
   gap: 8px;
   margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 .botoes-card button {
@@ -213,6 +214,17 @@ main {
 
 .btn-detalhes:hover {
   background: #e8670d;
+}
+
+.btn-editar {
+  background: #fff0df;
+  color: #ff7a1a;
+  padding: 12px;
+}
+
+.btn-editar:hover {
+  background: #ff7a1a;
+  color: white;
 }
 
 .btn-excluir {
