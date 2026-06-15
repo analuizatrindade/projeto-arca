@@ -68,7 +68,13 @@ btnCadastrar.addEventListener("click", function () {
 
   alert("Cadastro feito!");
 
-  window.location.href = "../Catalogo Animais/catalogo.html";
+  const tipoAtual = typeof tipoUsuarioAtual === "function" ? tipoUsuarioAtual() : "tutor";
+
+  if (tipoAtual === "ong") {
+    window.location.href = "../Animais.ong/pesquisa.html";
+  } else {
+    window.location.href = "../Catalogo Animais/catalogo.html";
+  }
 });
 
 

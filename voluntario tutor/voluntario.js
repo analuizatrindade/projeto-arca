@@ -26,6 +26,12 @@ const voluntariosPadrao = [
 ];
 
 const lista = document.getElementById("listaVoluntarios");
+const botaoPublicar = document.querySelector(".btn-publicar");
+const tipoAtual = typeof tipoUsuarioAtual === "function" ? tipoUsuarioAtual() : "tutor";
+
+if (botaoPublicar && tipoAtual !== "ong") {
+  botaoPublicar.style.display = "none";
+}
 
 function buscarVoluntarios() {
   const voluntariosSalvos =
@@ -43,6 +49,16 @@ function carregarVoluntarios() {
     const classeStatus =
       voluntario.status === "Disponível" ? "disponivel" : "indisponivel";
 
+    const botoesOng = tipoAtual === "ong" ? `
+          <button class="btn-editar" onclick="editarVoluntario(${index})">
+            Editar
+          </button>
+
+          <button class="btn-excluir" onclick="excluirVoluntario(${index})">
+            Excluir
+          </button>
+    ` : "";
+
     lista.innerHTML += `
       <div class="voluntario-card">
         <img src="${voluntario.foto}" alt="${voluntario.nome}">
@@ -57,13 +73,7 @@ function carregarVoluntarios() {
         </span>
 
         <div class="acoes">
-          <button class="btn-editar" onclick="editarVoluntario(${index})">
-            Editar
-          </button>
-
-          <button class="btn-excluir" onclick="excluirVoluntario(${index})">
-            Excluir
-          </button>
+          ${botoesOng}
 
           <button class="btn-chamar" type="button">
             Chamar
@@ -75,6 +85,10 @@ function carregarVoluntarios() {
 }
 
 function editarVoluntario(index) {
+  if (tipoAtual !== "ong") {
+    return;
+  }
+
   if (index < voluntariosPadrao.length) {
     alert("Voluntários padrão não podem ser editados.");
     return;
@@ -105,6 +119,10 @@ function editarVoluntario(index) {
 }
 
 function excluirVoluntario(index) {
+  if (tipoAtual !== "ong") {
+    return;
+  }
+
   if (index < voluntariosPadrao.length) {
     alert("Voluntários padrão não podem ser excluídos.");
     return;
@@ -128,7 +146,9 @@ function excluirVoluntario(index) {
 }
 
 function irCadastro() {
-  window.location.href = "../Cadastrar Voluntario/cadastro.html";
+  if (tipoAtual === "ong") {
+    window.location.href = "../Cadastro Voluntario/cadastro.html";
+  }
 }
 
 carregarVoluntarios();

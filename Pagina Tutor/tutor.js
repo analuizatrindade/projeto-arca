@@ -1,7 +1,14 @@
-document.querySelector(".btn-laranja").addEventListener("click", function() {
-  window.location.href = "../Catalogo/catalogo.html";
-});
+const btnAnimais = document.querySelector(".btn-laranja");
+const btnDenuncia = document.querySelector(".btn-branco");
 
-document.querySelector(".btn-branco").addEventListener("click", function() {
-  window.location.href = "../Denuncia/denuncia.html";
-});
+if (btnAnimais) {
+  btnAnimais.addEventListener("click", function() {
+    window.location.href = "../Catalogo Animais/catalogo.html";
+  });
+}
+
+if (btnDenuncia) {
+  btnDenuncia.addEventListener("click", function() {
+    window.location.href = "../Denuncia/denuncia.html";
+  });
+}

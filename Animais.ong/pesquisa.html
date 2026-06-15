@@ -32,11 +32,15 @@
     </div>
 
     <div class="filtros">
-      <button type="button" data-filtro="todos">Todos</button>
+      <button type="button" class="ativo" data-filtro="todos">Todos</button>
       <button type="button" data-filtro="cachorro">Cachorros</button>
       <button type="button" data-filtro="gato">Gatos</button>
       <button type="button" data-filtro="pequena">Pequeno</button>
+      <button type="button" data-filtro="médio">Médio</button>
+      <button type="button" data-filtro="grande">Grande</button>
     </div>
+
+    <button type="button" class="btn-cadastrar-animal" id="btnCadastrarAnimal">Cadastrar novo animal</button>
   </section>
 
   <section class="grid" id="listaAnimais"></section>
@@ -67,6 +71,7 @@
   </div>
 </footer>
 
+<script src="../auth.js"></script>
 <script src="pesquisa.js"></script>
 </body>
 </html>

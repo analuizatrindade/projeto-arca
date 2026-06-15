@@ -5,9 +5,13 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
   const senha = document.getElementById("senha").value.trim();
 
   if (usuario === "tutor" && senha === "123456") {
+    localStorage.setItem("usuarioLogado", JSON.stringify({ nome: "Tutor", tipo: "tutor" }));
+    localStorage.setItem("tipoUsuarioAtual", "tutor");
     window.location.href = "../Pagina Tutor/tutor.html";
   } 
   else if (usuario === "Ong" && senha === "ong$-135") {
+    localStorage.setItem("usuarioLogado", JSON.stringify({ nome: "ONG", tipo: "ong" }));
+    localStorage.setItem("tipoUsuarioAtual", "ong");
     window.location.href = "../Principal ONG/ong.html";
   } 
   else {
@@ -23,8 +27,12 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     }
 
     if (usuarioEncontrado.tipo === "adotante") {
+      localStorage.setItem("usuarioLogado", JSON.stringify({ nome: usuarioEncontrado.nome, tipo: "tutor" }));
+      localStorage.setItem("tipoUsuarioAtual", "tutor");
       window.location.href = "../Pagina Tutor/tutor.html";
     } else {
+      localStorage.setItem("usuarioLogado", JSON.stringify({ nome: usuarioEncontrado.nome, tipo: "ong" }));
+      localStorage.setItem("tipoUsuarioAtual", "ong");
       window.location.href = "../Principal ONG/ong.html";
     }
   }

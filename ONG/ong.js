@@ -1,11 +1,11 @@
 function verAnimal() {
-  window.location.href = "../Descricao/Descricao.html";
+  window.location.href = "../Animais.ong/pesquisa.html";
 }
 
 function sair() {
   const confirmar = confirm("Deseja sair da sua conta?");
 
   if (confirmar) {
-    window.location.href = "../Login/login.html";
+    sairDaConta();
   }
 }

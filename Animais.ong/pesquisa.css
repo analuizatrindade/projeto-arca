@@ -138,10 +138,26 @@ main {
   font-weight: 700;
 }
 
-.filtros button:hover {
+.filtros button:hover,
+.filtros button.ativo {
   background: var(--laranja);
   color: white;
   border-color: var(--laranja);
+}
+
+.btn-cadastrar-animal {
+  margin-top: 18px;
+  background: var(--laranja);
+  color: white;
+  border: 1px solid var(--laranja);
+  border-radius: 10px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.btn-cadastrar-animal:hover {
+  background: #dd741f;
 }
 
 .grid {
@@ -173,13 +189,29 @@ main {
 
 .info h3 {
   font-size: 18px;
-  margin-bottom: 8px;
+  margin: 5px 0 8px;
+}
+
+.status {
+  display: inline-block;
+  background: #fff1e6;
+  color: var(--laranja);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .info p {
   font-size: 14px;
   line-height: 1.4;
   color: var(--cinza);
+}
+
+.botoes-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .card button {
@@ -196,6 +228,34 @@ main {
 .card button:hover {
   background: var(--laranja);
   color: white;
+}
+
+.card .btn-excluir {
+  border-color: #c62828;
+  color: #c62828;
+}
+
+.card .btn-excluir:hover {
+  background: #c62828;
+  color: white;
+}
+
+.card .btn-bloqueado {
+  border-color: #aaa;
+  color: #777;
+  cursor: default;
+}
+
+.card .btn-bloqueado:hover {
+  background: white;
+  color: #777;
+}
+
+.mensagem-vazia {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: 900;
+  color: var(--cinza);
 }
 
 footer {

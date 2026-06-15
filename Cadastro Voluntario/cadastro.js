@@ -34,5 +34,11 @@ document.getElementById("formVoluntario").addEventListener("submit", function(e)
 });
 
 function voltar() {
-  window.location.href = "../Pagina Tutor/tutor.html";
+  const tipo = typeof tipoUsuarioAtual === "function" ? tipoUsuarioAtual() : "tutor";
+
+  if (tipo === "ong") {
+    window.location.href = "../voluntario tutor/voluntario.html";
+  } else {
+    window.location.href = "../Pagina Tutor/tutor.html";
+  }
 }
